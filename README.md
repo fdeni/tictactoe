@@ -18,5 +18,6 @@ A web app to play tic tac toe.
 * run in terminal :
   * linux/MacOs : ./gradlew bootRun
   * windows : gradlew.bat bootRun
+* go to http://localhost:8080/ 
 * To end : CTRL+C
 
