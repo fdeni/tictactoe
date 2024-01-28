@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="https://www.thymeleaf.org" lang="en">
+
+<head th:replace="fragments/content :: baseHead(~{::title}, ~{}, ~{::link})">
+  <title>Tic Tac Toe - Log In</title>
+  <link rel="stylesheet" href="css/login.css">
+</head>
+
+<body class="text-center">
+
+<main class="form-login shadow">
+
+  <form th:action="@{/login}" method="post">
+    <div th:if="${param.logout}" class="alert alert-primary alert-dismissible fade show mb-3" role="alert">
+      You have been logged out.
+      <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+
+    <div th:if="${param.error}" class="alert alert-danger alert-dismissible fade show mb-3" role="alert">
+      Invalid username and password.
+      <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+
+    <div class="form-floating">
+      <input name="username" type="text" class="form-control" id="floatingInput"/>
+      <label for="floatingInput">Username</label>
+    </div>
+    <div class="form-floating">
+      <input name="password" type="password" class="form-control" id="floatingPassword"/>
+      <label for="floatingPassword">Password</label>
+    </div>
+
+    <button class="btn btn-secondary" type="submit">Log In</button>
+
+    <p class="mt-5 mb-3 text-muted" th:insert="fragments/footer :: footer"></p>
+  </form>
+</main>
+
+</body>
+</html>
